@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/company/company",
+    "pages/jobdetail/jobdetail",
+    "pages/my/my",
+    "pages/emil/emil"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarBackgroundColor": "#f7982a",
+    "navigationBarTitleText": "微招聘",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+      "list":[{
+          "pagePath":"pages/home/home",
+          "text":"首页",
+          "iconPath":"images/home.png",
+          "selectedIconPath":"images/home1.png"
+      },
+      {
+        "pagePath": "pages/company/company",
+        "text": "企业",
+        "iconPath": "images/company.png",
+        "selectedIconPath": "images/company1.png"
+      },
+      {
+                    "pagePath": "pages/emil/emil",
+                    "text": "投递箱",
+                    "iconPath": "images/emil.png",
+                    "selectedIconPath": "images/emil1.png"
+      },
+      {
+                    "pagePath": "pages/my/my",
+                    "text": "我的",
+                    "iconPath": "images/my.png",
+                    "selectedIconPath": "images/my1.png"
+      }
+      ],
+      "color":"#333",
+      "selectedColor":"#f7982a",
+      "backgroundColor":"#f6f6f6",
+      "borderStyle":"white"
+  },
+  "networkTimeout":{
+      "request":10000,
+      "downloadFile":10000
+  }
+}

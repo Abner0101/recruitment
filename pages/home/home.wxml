@@ -1,0 +1,86 @@
+<view class='container'>
+    <view class="search-flex {{scrolltop>200?'tophide':''}}">
+        <view class='seaerch-flex-load'>
+            <text data-findex="1">{{currentCity}}</text>
+        </view>
+        <view class='search-bar'>
+            <input type='text' maxlength='12' placeholder='搜索公司/职位' bindinput="inputSearch"></input>
+            <button class='search-btn' bindtap='submitSearch' wx:if="{{showsearch}}">搜索</button>
+        </view>
+    </view>
+
+    <swiper class='home-banner' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class='index-menu'>
+        <navigator class='index-menu-item' wx:for="{{indexmenu}}" wx:key="{{item.url}}" url='../{{item.url}}/{item.url}}'>
+            <image src='{{item.icon}}'></image>
+            <text>{{item.text}}</text>
+        </navigator>
+    </view>
+
+    <view class='filter-flex'>
+        <view class="filter-tab">
+            <text bindtap="setFilterPanel" data-findex="1" class="{{showfilterindex==1?'active':''}}">职位</text>
+            <text bindtap="setFilterPanel" data-findex="2" class="{{showfilterindex==2?'active':''}}">薪资</text>
+            <text bindtap="setFilterPanel" data-findex="3" class="{{showfilterindex==3?'active':''}}">筛选</text>
+            <text bindtap="setFilterPanel" data-findex="4" class="{{showfilterindex==4?'active':''}}">南城</text>
+        </view>
+        <view class='filter-content' wx:if="{{showfilter}}">
+            <view class='filter-panel' wx:if="{{showfilterindex==1}}">
+                <view class='filter-panel-left'>
+                    <view wx:for="{{filterdata.job}}" wx:key="{{item.id}}" bindtap='setJobIndex' data-jobindex='{{index}}' data-jobid='{{item.id}}' class="{{jobindex==index?'active':''}}">{{item.title}}</view>
+                </view>
+            </view>
+            <view class='filter-panel' wx:if="{{showfilterindex==2}}">
+                <view class='filter-panel-left'>
+                    <view wx:for="{{filterdata.money}}" wx:key="{{item.id}}" bindtap='setMoneyIndex' data-moneyindex='{{index}}' data-moneyid='{{item.id}}' class="{{moneyindex==index?'active':''}}">{{item.title}}</view>
+                </view>
+            </view>
+            <view class='filter-panel' wx:if="{{showfilterindex==3}}">
+                <view class='filter-panel-left'>
+                    <view wx:for="{{filterdata.search}}" wx:key="{{item.id}}" bindtap='setSearchIndex' data-searchindex='{{index}}' data-searchid='{{item.id}}' class="{{searchindex==index?'active':''}}">{{item.title}}</view>
+                </view>
+            </view>
+            <view class='filter-panel' wx:if="{{showfilterindex==4}}">
+                <view class='filter-panel-left'>
+                    <view wx:for="{{filterdata.city}}" wx:key="{{item.id}}" bindtap='setCityIndex' data-cityindex='{{index}}' data-cityid='{{item.id}}' class="{{cityindex==index?'active':''}}">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="filter-shadow" wx:if="{{showfilter}}" bindtap="hideFilter"></view>
+    </view>
+
+    <scroll-view class='container-body' scroll-y='true' scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+
+        <navigator class='work-item' wx:for="{{servicelist}}" wx:key="{{item.id}}" url="../jobdetail/jobdetail?id={{item.id}}">
+            <view class='work-list'>
+                <view class='work-time'>
+                    <view class='work'>{{item.job}}</view>
+                    <view class='time'>{{item.pushtime}}</view>
+                </view>
+                <view class='work-money'>{{item.money}}</view>
+                <view class='work-tag-block'>
+                    <block wx:for="{{item.tags}}">
+                        <view class='work-tag'>
+                            <text>{{item.tag}}</text>
+                        </view>
+                    </block>
+                </view>
+                <view class='work-companey'>
+                    <view class='work-companey-name'>{{item.companeyname}}</view>
+                    <view class='work-companey-adress'>{{item.city}}</view>
+                </view>
+            </view>
+        </navigator>
+
+        <view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+    </scroll-view>
+
+
+</view>

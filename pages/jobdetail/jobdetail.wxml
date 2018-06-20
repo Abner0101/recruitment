@@ -1,0 +1,20 @@
+<view class='container'>
+    <view class='jobdetail-list'>
+        <view class='work-time'>
+            <view class='work'>{{jobdetail.job}}</view>
+            <view class='time'>{{jobdetail.pushtime}}</view>
+        </view>
+        <view class='work-money'>{{jobdetail.money}}</view>
+        <view class='work-tag-block'>
+            <block wx:for="{{jobdetail.tags}}">
+                <view class='work-tag'>
+                    <text>{{item.tag}}</text>
+                </view>
+            </block>
+        </view>
+         <view class='work-companey'>
+            <view class='work-companey-name'>{{jobdetail.companeyname}}</view>
+            <view class='work-companey-adress'>{{jobdetail.city}}</view>
+        </view> 
+    </view>
+</view>

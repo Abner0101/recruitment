@@ -1,0 +1,78 @@
+/**app.wxss**/
+.container {
+	flex: 1;
+  	display: flex;
+  	flex-direction: column;
+ 	box-sizing: border-box;
+} 
+
+ .container-body{
+	flex: 1;
+    height: 1000rpx;
+	overflow-y: auto;
+	overflow-x: hidden;
+} 
+
+.work-list{
+        margin: 20rpx 30rpx;
+}
+.work-item{
+	border-bottom: 20rpx solid #e8e8e8;
+} 
+
+.work-time{
+    display: flex;
+}  
+.work{
+     flex: 1;
+     font-size: 30rpx;
+     font-weight: bold;
+}
+.time{
+    /* flex: 1; */
+    /* justify-content: flex-end; */
+    right: 0rpx;
+    color: #888888;
+    font-size: 25rpx;
+}
+.work-money{
+    font-size: 27rpx;
+    color: #FF0000;
+    margin-top: 10rpx;
+    font-weight: bold;
+}
+
+.work-tag-block{
+    display: flex;
+}
+.work-tag{
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+.work-tag text{
+    padding: 3rpx 10rpx;
+	border: 1rpx solid #f7982a;
+	line-height: 1;
+	color: #f7982a;
+	font-size: 20rpx;
+	border-radius: 4rpx;
+	margin-right: 10rpx;
+	margin-bottom: 10rpx;
+	white-space: nowrap;
+}
+.work-companey{
+    display: flex;
+    border-top: 1rpx solid #e8e8e8;
+    padding: 10rpx 0rpx 0rpx 0rpx;
+}
+.work-companey-name{
+    flex: 1;
+    color: #808080;
+    font-size: 27rpx;
+    
+}
+.work-companey-adress{
+     right: 0rpx;
+     color: #808080;
+     font-size: 27rpx;
+}
