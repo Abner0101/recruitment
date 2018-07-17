@@ -1,46 +1,6 @@
-.search-flex{
-	display: flex; 
-	padding: 20rpx;
-	border-bottom: 0rpx solid #ddd;
-	position: relative;
-	z-index: 13;
-	/* transform:  translateY(-100%);  */
-	margin-top: 0;
-	transition: all 0.3s;
-}
-.search-bar{ 
-    flex: 1;
-    display: flex;
-	border: 0rpx solid #000;
-	border-radius: 20rpx;
-}
 
-.seaerch-flex-load{
-    padding-right: 20rpx;
-    font-size: 28rpx;
-    line-height: 55rpx;
-}
-
-.search-bar input{
-	flex: 1;
-	height: 55rpx;
-	line-height: 55rpx;
-	padding: 0 10rpx;
-	background: #fff;
-    font-size: 25rpx;
-    border-radius: 12rpx;
-}
-.search-flex button{
-	background: #f7982a;
-	color: #fff;
-	line-height: 55rpx;
-	height: 55rpx;
-	font-size: 25rpx;
-	border-radius: 12rpx;
-}
-
-.search-flex.tophide{
-	margin-top: -117rpx;
+.home-scroll{
+     height: 1000rpx;
 }
 
 .home-banner{
@@ -161,18 +121,3 @@
 	background: rgba(0,0,0,.5);
 }
 
-.gototop{
-	width: 70rpx;
-	height: 70rpx;
-	/* background: url(../../images/up.png) no-repeat 50% 50% / 100% auto; */
-	position: fixed;
-	bottom: 20rpx;
-	right: 20rpx;
-	transition: all 0.3s;
-	opacity: 0;
-	transform: translateY(200rpx);
-}
-.gototop.active{
-	opacity: 1;
-	transform: translateY(0);
-}

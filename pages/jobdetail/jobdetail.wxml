@@ -1,20 +1,65 @@
 <view class='container'>
-    <view class='jobdetail-list'>
-        <view class='work-time'>
-            <view class='work'>{{jobdetail.job}}</view>
-            <view class='time'>{{jobdetail.pushtime}}</view>
-        </view>
-        <view class='work-money'>{{jobdetail.money}}</view>
-        <view class='work-tag-block'>
-            <block wx:for="{{jobdetail.tags}}">
-                <view class='work-tag'>
-                    <text>{{item.tag}}</text>
+    <view class='jobdetail-content'>
+        <view class='jobdetail-list'>
+            <view class='work-time'>
+                <view class='work'>{{companyList.job}}</view>
+                <view class='time'>{{companyList.pushtime}}</view>
+            </view>
+            <view class='work-money'>{{companyList.money}}</view>
+            <view class='work-tag-block'>
+                <block wx:for="{{companyList.tags}}">
+                    <view class='work-tag'>
+                        <text>{{item.tag}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class='jobdetail-desc'>
+                <view class="jobdetail-img">
+                    <image src="{{companyList.imgurl}}" mode="aspectFill"></image>
                 </view>
-            </block>
+                <view class="jobdetail-text">
+                    <view class="jobdetail-tite">{{jobdetail.companeyname}}</view>
+                    <view class="jobdetail-look" bindtap="goCompany">查看公司>></view>
+                    <view class='jobdetail-intro jobdetail-longdec'>
+                        <text>{{companyList.introduce}}</text>
+                    </view>
+                </view>
+            </view>
         </view>
-         <view class='work-companey'>
-            <view class='work-companey-name'>{{jobdetail.companeyname}}</view>
-            <view class='work-companey-adress'>{{jobdetail.city}}</view>
-        </view> 
+
+        <view class='jobdetail-work'>
+            <view class='jobdetail-desc1'>
+                <image src='./../../images/workintro.png'></image>
+                <view class='jobdetail-text jobdetail-tite'>职位说明</view>
+            </view>
+            <view class='jobdetail-requirements'>{{companyList.requirements}}</view>
+        </view>
+
+        <view class='jobdetail-work'>
+            <view class='jobdetail-desc1'>
+                <image src='./../../images/adress.png'></image>
+                <view class='jobdetail-text jobdetail-tite'>工作地址</view>
+            </view>
+            <view class='jobdetail-requirements'>{{companyList.adress}}</view>
+            <view class="jobdetail-look">查看位置>></view>
+        </view>
+
+        <view class='jobdetail-work'>
+            <view class='jobdetail-desc1'>
+                <image src='./../../images/pushmen.png'></image>
+                <view class='jobdetail-text jobdetail-tite'>发布者</view>
+            </view>
+            <view class='jobdetail-desc1'>
+                <view class='jobdetail-requirements'>{{companyList.pushmen}}</view>
+                <view class="jobdetail-position">{{companyList.position}}</view>
+                <view class='jobdetail-phone'>
+                    <image src='./../../images/phone.png'></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='container-footer'>
+        <text>收藏</text>
+        <text class='apply-btn'>投递简历</text>
     </view>
 </view>

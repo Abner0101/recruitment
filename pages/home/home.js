@@ -1,3 +1,4 @@
+
 Page({
 
     /**
@@ -10,7 +11,6 @@ Page({
         interval: 5000,
         duration: 1000,
         currentCity: '',
-        showsearch: false,   //显示搜索按钮
         searchtext: '',  //搜索文字
         showsearch: false,   //显示搜索按钮
         searchtext: '',  //搜索文字
@@ -253,54 +253,7 @@ Page({
         })
     },
 
-    fetchServiceData: function () {  //获取城市列表
-        let _this = this;
-        wx.showToast({
-            title: '加载中',
-            icon: 'loading'
-        })
-        const perpage = 10;
-        this.setData({
-            page: this.data.page + 1
-        })
-        const page = this.data.page;
-        const newlist = [];
-        for (var i = (page - 1) * perpage; i < page * perpage; i++) {
-            newlist.push({
-                "id": i + 1,
-                "job":"前端工程师",
-                "pushtime":"昨天",
-                "money":"15000~30000",
-                "companeyname": "东莞有信信息技术有限公司" + (i + 1),
-                "city": "南城",
-                "tags": [
-                    { "tag": "IT" },
-                    { "tag": "计算机" },
-                    { "tag": "web" },
-                    { "tag": "前端" }
-                ]
-            })
-        }
-        setTimeout(() => {
-            _this.setData({
-                servicelist: _this.data.servicelist.concat(newlist)
-            })
-        }, 1500)
-    },
-
-    scrollHandle: function (e) { //滚动事件
-        this.setData({
-            scrolltop: e.detail.scrollTop
-        })
-    },
-    goToTop: function () { //回到顶部
-        this.setData({
-            scrolltop: 0
-        })
-    },
-    scrollLoading: function () { //滚动加载
-        this.fetchServiceData();
-    },
+   
     onPullDownRefresh: function () { //下拉刷新
         this.setData({
             page: 0,
@@ -314,6 +267,58 @@ Page({
             wx.stopPullDownRefresh()
         }, 1000)
     },  
+
+    fetchServiceData: function () {  //获取城市列表
+        let _this = this;
+        wx.showToast({
+            title: '加载中',
+            icon: 'loading'
+        })
+    const perpage = 10;
+        this.setData({
+            page: this.data.page + 1
+        })
+    const page = this.data.page;
+        const newlist = [];
+        for(var i = (page - 1) * perpage; i<page * perpage; i++) {
+    newlist.push({
+        "id": i + 1,
+        "job": "前端工程师",
+        "pushtime": "昨天",
+        "money": "15000~30000",
+        "companeyname": "东莞有信信息技术有限公司" + (i + 1),
+        "city": "南城",
+        "tags": [
+            { "tag": "IT" },
+            { "tag": "计算机" },
+            { "tag": "web" },
+            { "tag": "前端" }
+        ]
+    })
+}
+setTimeout(() => {
+    _this.setData({
+        servicelist: _this.data.servicelist.concat(newlist)
+    })
+}, 1500)
+},
+
+scrollHandle:function(e) { //滚动事件
+    this.setData({
+        scrolltop: e.detail.scrollTop
+    })
+},
+
+goToTop:function () { //回到顶部
+    this.setData({
+        scrolltop: 0
+    })
+},
+
+scrollLoading:function () { //滚动加载
+    this.fetchServiceData();
+},
+
 
 
     //城市定位

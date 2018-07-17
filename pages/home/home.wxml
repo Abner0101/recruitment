@@ -56,7 +56,7 @@
         <view class="filter-shadow" wx:if="{{showfilter}}" bindtap="hideFilter"></view>
     </view>
 
-    <scroll-view class='container-body' scroll-y='true' scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+    <scroll-view class='container-body home-scroll' scroll-y='true' scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
 
         <navigator class='work-item' wx:for="{{servicelist}}" wx:key="{{item.id}}" url="../jobdetail/jobdetail?id={{item.id}}">
             <view class='work-list'>

@@ -1,1 +1,6 @@
-{}
+{
+    "navigationBarTitleText": "职位详情",
+    "backgroundColor": "#f9f9f9",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+}

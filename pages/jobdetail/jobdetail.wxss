@@ -1,3 +1,54 @@
-.jobdetail-list{
-    margin: 25rpx 25rpx;
+.jobdetail-longdec {
+    display: -webkit-box; /*关键属性*/
+    word-break: break-all;
+    -webkit-box-orient: vertical; /* 关键属性  */
+    -webkit-line-clamp: 2; /* 关键属性 */
+    overflow: hidden; /*  关键属性   */
+    text-overflow: ellipsis; /* 超出内容显示省略号*/
+}
+
+.jobdetail-content {
+    margin-bottom: 88rpx;
+}
+
+.jobdetail-position {
+    flex: 2;
+    margin-top: 20rpx;
+    color: #454545;
+    font-size: 32rpx;
+}
+
+.jobdetail-phone {
+    right: 0rpx;
+    margin-top: 20rpx;
+}
+
+.container-footer text.apply-btn {
+    background: #f7982a;
+    color: #fff;
+    flex: 2;
+}
+
+.container-footer {
+    display: flex;
+    position: fixed;
+    height: 88rpx;
+    bottom: 0;
+    width: 100%;
+    border-top: 1rpx solid #ddd;
+    background: #fff;
+}
+
+.container-footer text {
+    flex: 1;
+    display: block;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 34rpx;
+    border-left: 1rpx solid #ddd;
+}
+
+.container-footer text:first-child {
+    border-left: none;
 }

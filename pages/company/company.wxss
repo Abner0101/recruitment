@@ -1,0 +1,17 @@
+.container-company{
+    background:  #f7f7f7;
+}
+
+.company-list{
+    margin-top: 15rpx;
+    padding-top: 10rpx;
+    background: #fff;
+}
+
+.company-desc{
+    display: flex;
+    padding: 25rpx 25rpx;
+}
+.company-workpush{
+    margin-top: 15rpx;
+}

@@ -1,52 +1,39 @@
+var companyData = require('../../companydata/companydata.js')
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        currentCity: ''
+        searchtext: '',  //搜索文字
+        showsearch: false,   //显示搜索按钮
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getLocation();
+        this.setData({
+            companyList: companyData.companyList
+        });
     },
 
-    getLocation: function () {
-        var page = this
-        wx.getLocation({
-            type: 'wgs84',
-            success: function (res) {
-                var latitude = res.latitude
-                var longitude = res.longitude
-                page.loadCity(longitude, latitude)
-
-            },
+    goCompany: function () {
+        wx.navigateTo({
+            url: '../companydetail/companydetail'
         })
     },
-
-    loadCity: function (longitude, latitude) {
-        var page = this
-        wx.request({
-            url: 'https://api.map.baidu.com/geocoder/v2/?ak=7r1vRfq8Y65pWjGhGfG9npLMfXGmfzjD&location=' + latitude + ',' + longitude + '&output=json',
-            data: {},
-            header: {
-                'Content-Type': 'application/json'
-            },
-            success: function (res) {
-                // success
-                console.log(res);
-                var city = res.data.result.addressComponent.city;
-                page.setData({ currentCity: city });
-            },
-            fail: function () {
-                page.setData({ currentCity: "获取定位失败" });
-            },
+    inputSearch: function (e) {  //输入搜索文字
+        this.setData({
+            showsearch: e.detail.cursor > 0,
+            searchtext: e.detail.value
         })
-},
-
+    },
+    submitSearch: function () {  //提交搜索
+        console.log(this.data.searchtext);
+        this.fetchServiceData();
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

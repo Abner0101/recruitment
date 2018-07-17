@@ -1,0 +1,30 @@
+.tab-h {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    height: 80rpx;
+    background: #f7f7f7;
+    font-size: 16px;
+    width: 100%;
+}
+
+.tab-item {
+    margin: 0rpx 80rpx;
+    padding: 25rpx 0rpx;
+    color: #8e8e8e;
+}
+
+.tab-item.active {
+    color: #f7982a;
+    border-bottom: 5rpx solid #f7982a;
+}
+.emil-read{
+    background: #f7f7f7;
+}
+
+
+.emil-read-item{
+    border-top: 20rpx solid #f7f7f7;
+}
+
+

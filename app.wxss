@@ -1,78 +1,254 @@
 /**app.wxss**/
+
 .container {
-	flex: 1;
-  	display: flex;
-  	flex-direction: column;
- 	box-sizing: border-box;
-} 
-
- .container-body{
-	flex: 1;
-    height: 1000rpx;
-	overflow-y: auto;
-	overflow-x: hidden;
-} 
-
-.work-list{
-        margin: 20rpx 30rpx;
-}
-.work-item{
-	border-bottom: 20rpx solid #e8e8e8;
-} 
-
-.work-time{
+    flex: 1;
     display: flex;
-}  
-.work{
-     flex: 1;
-     font-size: 30rpx;
-     font-weight: bold;
+    flex-direction: column;
+    box-sizing: border-box;
 }
-.time{
-    /* flex: 1; */
-    /* justify-content: flex-end; */
+
+.container-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.work-list {
+    padding: 20rpx 30rpx;
+    background: #fff;
+}
+
+.work-item {
+    border-bottom: 25rpx solid #e8e8e8;
+}
+
+.work-time {
+    display: flex;
+}
+
+.work {
+    flex: 1;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.time {
+    /* flex: 1; *//* justify-content: flex-end; */
     right: 0rpx;
-    color: #888888;
+    color: #888;
     font-size: 25rpx;
 }
-.work-money{
+
+.work-money {
     font-size: 27rpx;
-    color: #FF0000;
+    color: #f00;
     margin-top: 10rpx;
     font-weight: bold;
 }
 
-.work-tag-block{
+.work-tag-block {
     display: flex;
 }
-.work-tag{
+
+.work-tag {
     margin-top: 10rpx;
     margin-bottom: 20rpx;
 }
-.work-tag text{
+
+.work-tag text {
     padding: 3rpx 10rpx;
-	border: 1rpx solid #f7982a;
-	line-height: 1;
-	color: #f7982a;
-	font-size: 20rpx;
-	border-radius: 4rpx;
-	margin-right: 10rpx;
-	margin-bottom: 10rpx;
-	white-space: nowrap;
+    border: 1rpx solid #f7982a;
+    line-height: 1;
+    color: #f7982a;
+    font-size: 20rpx;
+    border-radius: 4rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
 }
-.work-companey{
+
+.work-companey {
     display: flex;
     border-top: 1rpx solid #e8e8e8;
     padding: 10rpx 0rpx 0rpx 0rpx;
 }
-.work-companey-name{
+
+.work-companey-name {
     flex: 1;
     color: #808080;
     font-size: 27rpx;
-    
 }
-.work-companey-adress{
-     right: 0rpx;
-     color: #808080;
-     font-size: 27rpx;
+
+.work-companey-adress {
+    right: 0rpx;
+    color: #808080;
+    font-size: 27rpx;
+}
+
+.jobdetail-list {
+    padding: 25rpx 25rpx;
+}
+
+.jobdetail-img {
+    margin-bottom: 20rpx;
+    width: 185rpx;
+    height: 185rpx;
+}
+
+.jobdetail-img image {
+    width: 185rpx;
+    height: 185rpx;
+}
+
+.jobdetail-desc {
+    display: flex;
+    border-top: 1rpx solid #ddd;
+    padding-top: 20rpx;
+}
+
+.jobdetail-text {
+    margin-left: 20rpx;
+    /* margin-top: 20rpx; */
+}
+
+.jobdetail-tite {
+    font-size: 35rpx;
+}
+
+.jobdetail-look {
+    color: #f7982a;
+    font-size: 25rpx;
+}
+
+.jobdetail-intro {
+    margin-top: 15rpx;
+}
+
+.jobdetail-intro text {
+    color: #888;
+    font-size: 30rpx;
+}
+
+.jobdetail-work {
+    border-top: 20rpx solid #ddd;
+    padding: 25rpx 25rpx;
+}
+
+.jobdetail-desc1 {
+    display: flex;
+}
+
+.jobdetail-desc1 image {
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.jobdetail-requirements {
+    flex: 1;
+    margin-top: 20rpx;
+    color: #454545;
+    font-size: 32rpx;
+}
+
+.long-dec {
+    display: -webkit-box; /*关键属性*/
+    word-break: break-all;
+    -webkit-box-orient: vertical; /* 关键属性 */
+    -webkit-line-clamp: 6; /* 关键属性 */
+    overflow: hidden; /* 关键属性 */
+    text-overflow: ellipsis; /* 超出内容显示省略号*/
+}
+
+.hidecontent {
+    display: -webkit-box;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.arrow {
+    position: absolute;
+}
+
+.search-flex {
+    display: flex;
+    padding: 20rpx;
+    border-bottom: 0rpx solid #ddd;
+    position: relative;
+    z-index: 13;
+    /* transform:  translateY(-100%);  */
+    margin-top: 0;
+    transition: all 0.3s;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    border: 0rpx solid #000;
+    border-radius: 20rpx;
+}
+
+.seaerch-flex-load {
+    padding-right: 20rpx;
+    font-size: 28rpx;
+    line-height: 55rpx;
+}
+
+.search-bar input {
+    flex: 1;
+    height: 55rpx;
+    line-height: 55rpx;
+    padding: 0 10rpx;
+    background: #fff;
+    font-size: 25rpx;
+    border-radius: 12rpx;
+}
+
+.search-flex button {
+    background: #f7982a;
+    color: #fff;
+    line-height: 55rpx;
+    height: 55rpx;
+    font-size: 25rpx;
+    border-radius: 12rpx;
+}
+
+.search-flex.tophide {
+    margin-top: -117rpx;
+}
+
+.gototop {
+    width: 70rpx;
+    height: 70rpx;
+    /* background: url(../../images/up.png) no-repeat 50% 50% / 100% auto; */
+    position: fixed;
+    bottom: 20rpx;
+    right: 20rpx;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(200rpx);
+}
+
+.gototop.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.companydetail-intro-tag {
+    display: flex;
+}
+
+.companydetail-intro {
+    margin-top: 30rpx;
+    margin-right: 20rpx;
+}
+
+.companydetail-intro text {
+    color: #888;
+    font-size: 30rpx;
 }

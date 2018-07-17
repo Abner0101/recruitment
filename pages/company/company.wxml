@@ -1,3 +1,49 @@
-<view>
-{{currentCity}}
+<view class='container'>
+    <view class='container-company'>
+        <view class="search-flex {{scrolltop>200?'tophide':''}}">
+            <view class='search-bar '>
+                <input type='text' maxlength='12' placeholder='搜索职位关键字' bindinput="inputSearch"></input>
+                <button class='search-btn' bindtap='submitSearch' wx:if="{{showsearch}}">搜索</button>
+            </view>
+        </view>
+
+        <view class='company-list' bindtap='goCompany'>
+            <view class='company-desc'>
+                <view class="jobdetail-img">
+                    <image src="{{ companyList.imgurl}}" mode="aspectFill"></image>
+                </view>
+                <view class="jobdetail-text">
+                    <view class="jobdetail-tite">{{ companyList.companeyname}}</view>
+                    <view class='companydetail-intro-tag'>
+                        <block wx:for="{{ companyList.c_tags}}">
+                            <view class='companydetail-intro'>
+                                <text>{{item.c_tag}}</text>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="jobdetail-look company-workpush">已经发布7个职位</view>
+                </view>
+            </view>
+        </view>
+
+         <view class='company-list' bindtap='goCompany'>
+            <view class='company-desc'>
+                <view class="jobdetail-img">
+                    <image src="{{ companyList.imgurl}}" mode="aspectFill"></image>
+                </view>
+                <view class="jobdetail-text">
+                    <view class="jobdetail-tite">{{ companyList.companeyname}}</view>
+                    <view class='companydetail-intro-tag'>
+                        <block wx:for="{{ companyList.c_tags}}">
+                            <view class='companydetail-intro'>
+                                <text>{{item.c_tag}}</text>
+                            </view>
+                        </block>
+                    </view>
+                    <view class="jobdetail-look company-workpush">已经发布7个职位</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
 </view>

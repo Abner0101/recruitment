@@ -1,1 +1,56 @@
-<view>我的</view>
+<view class='container'>
+    <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 头像昵称 </button>
+        <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+
+    <view class="person-list">
+        <view class="my-list-item">
+            <image class="item-image" src="../../images/Resume.png"></image>
+            <text class="my-item-text">我的简历</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+        <view class="my-list-item">
+            <image class="item-image" src="../../images/Collection.png"></image>
+            <text class="my-item-text">我的收藏</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+        <view class="my-list-item">
+            <image class="item-image" src="../../images/Delivery.png"></image>
+            <text class="my-item-text">投递箱</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+        <view class="my-list-item list-item-top">
+            <image class="item-image" src="../../images/work.png"></image>
+            <text class="my-item-text">发布职位</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+        <view class="my-list-item">
+            <image class="item-image" src="../../images/Management.png"></image>
+            <text class="my-item-text">企业管理</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+        <view class="my-list-item">
+            <image class="item-image" src="../../images/message.png"></image>
+            <text class="my-item-text">投递信息</text>
+            <view class='item-image-right'>
+                <image class="item-image " src="../../images/right.png"></image>
+            </view>
+        </view>
+    </view>
+
+
+</view>

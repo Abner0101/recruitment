@@ -1,0 +1,51 @@
+.userinfo {
+padding-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f7982a;
+  height: 300rpx;
+}
+.userinfo-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #fff;
+}
+.person-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: #EBEBEB; 
+  height: 100%;
+}
+.my-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+  border-top: 1rpx solid #EBEBEB; 
+  width: 100%;
+  background: #fff;
+}
+.item-image {
+  width: 45rpx;
+  height: 45rpx;
+  margin: 20rpx;
+}
+.item-image-right{
+    position: fixed;
+    flex: 1;
+    right: 0rpx;
+}
+.my-item-text {
+  color: gray;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.list-item-top{
+    margin-top: 20rpx;
+}

@@ -1,1 +1,26 @@
-<view>投递箱</view>
+<import src="emil-read/emil-read.wxml" />
+<view class='container'>
+    <view class='tab-h'>
+        <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap='swichNav'>已读</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap='swichNav'>未读</view>
+    </view>
+
+    <swiper current="{{currentTab}}" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange" class='emil-read'>
+        <swiper-item>
+            <view class='emil-read-item'>
+                <template is="postItem" data="{{...companyList}}" />
+            </view>
+            <view class='emil-read-item'>
+                <template is="postItem" data="{{...companyList}}" />
+            </view>
+        </swiper-item>
+
+        <swiper-item>
+            <view class='emil-read-item'>
+                <template is="postItem" data="{{...companyList}}" />
+            </view>
+        </swiper-item>
+
+    </swiper>
+
+</view>
