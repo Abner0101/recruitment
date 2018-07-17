@@ -1,0 +1,23 @@
+<!--pages/emil/emil-read/emil-read.wxml-->
+<template name="postItem">
+    <view class='container'>
+        <view class='work-list '>
+            <view class='work-time'>
+                <view class='work'>{{job}}</view>
+                <view class='time'>{{pushtime}}</view>
+            </view>
+            <view class='work-money'>{{money}}</view>
+            <view class='work-tag-block'>
+                <block wx:for="{{tags}}">
+                    <view class='work-tag'>
+                        <text>{{item.tag}}</text>
+                    </view>
+                </block>
+            </view>
+            <view class='work-companey'>
+                <view class='work-companey-name'>{{companeyname}}</view>
+                <view class='work-companey-adress'>{{city}}</view>
+            </view>
+        </view>
+    </view>
+</template>

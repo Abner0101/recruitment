@@ -1,0 +1,22 @@
+
+
+.companydetail-list{
+    margin-top: 10rpx;
+    border-top: 1rpx solid #ddd;
+    border-bottom: 1rpx solid #ddd;
+    padding-top: 10rpx;
+}
+.companydetail-desc{
+    display: flex;
+    padding: 25rpx 25rpx;
+}
+.companydetail-work{
+     padding: 25rpx 25rpx;
+}
+
+.companydetail-work-more{
+    margin-top: 20rpx;
+}
+.companydetail-scroll{
+    height: 1000rpx;
+}

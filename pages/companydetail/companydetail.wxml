@@ -1,0 +1,75 @@
+<view class="container">
+    <view class='companydetail-list'>
+        <view class='companydetail-desc'>
+            <view class="jobdetail-img">
+                <image src="{{companyList.imgurl}}" mode="aspectFill"></image>
+            </view>
+            <view class="jobdetail-text">
+                <view class="jobdetail-tite">{{companyList.companeyname}}</view>
+                <view class="jobdetail-look">举报</view>
+                <view class='companydetail-intro-tag'>
+                    <block wx:for="{{companyList.c_tags}}">
+                        <view class='companydetail-intro'>
+                            <text>{{item.c_tag}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='companydetail-work'>
+        <view class='jobdetail-desc1'>
+            <image src='./../../images/company2.png'></image>
+            <view class='jobdetail-text jobdetail-tite'>公司介绍</view>
+        </view>
+        <view class="long-dec {{isFold?'hidecontent':'show'}}">
+            <text class='jobdetail-requirements'>{{companyList.introduce}}</text>
+        </view>
+        <view class="jobdetail-look {{isFold?'show':'hide'}}" bindtap="showAll">查看全部﹀</view>
+        <view class="jobdetail-look {{isFold?'hide':'show'}}" bindtap="showAll">收起︿</view>
+    </view>
+    <view class='jobdetail-work'>
+        <view class='jobdetail-desc1'>
+            <image src='./../../images/adress.png'></image>
+            <view class='jobdetail-text jobdetail-tite'>工作地址</view>
+        </view>
+        <view class='jobdetail-requirements'>{{companyList.adress}}</view>
+        <view class="jobdetail-look">查看位置>></view>
+    </view>
+
+    <view class='jobdetail-work'>
+        <view class='jobdetail-desc1'>
+            <image src='./../../images/work.png'></image>
+            <view class='jobdetail-text jobdetail-tite'>发布职位</view>
+        </view>
+
+        <scroll-view class='container-body companydetail-scroll' scroll-y='true' scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+
+            <navigator class='work-item' wx:for="{{servicelist}}" wx:key="{{item.id}}" url="../jobdetail/jobdetail?id={{item.id}}">
+                <view class='work-list'>
+                    <view class='work-time'>
+                        <view class='work'>{{item.job}}</view>
+                        <view class='time'>{{item.pushtime}}</view>
+                    </view>
+                    <view class='work-money'>{{item.money}}</view>
+                    <view class='work-tag-block'>
+                        <block wx:for="{{item.tags}}">
+                            <view class='work-tag'>
+                                <text>{{item.tag}}</text>
+                            </view>
+                        </block>
+                    </view>
+                    <view class='work-companey'>
+                        <view class='work-companey-name'>{{item.companeyname}}</view>
+                        <view class='work-companey-adress'>{{item.city}}</view>
+                    </view>
+                </view>
+            </navigator>
+
+            <view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+        </scroll-view>
+
+    </view>
+
+
+</view>
